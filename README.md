@@ -1,2 +1,2 @@
-# bzlmod_lockfile_bug
-Demonstrate bzlmod lockfile remembering previous state.
+# testrepo1
+First Renovate test repo.

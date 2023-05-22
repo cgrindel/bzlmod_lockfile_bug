@@ -1,0 +1,27 @@
+module(
+    name = "my_test_repo",
+    version = "0.0.0",
+)
+
+bazel_dep(name = "cgrindel_bazel_starlib", version = "0.15.0")
+
+bazel_dep(
+    name = "rules_bazel_integration_test",
+    version = "0.12.0",
+    dev_dependency = True,
+)
+
+# git_override(
+#     module_name = "cgrindel_bazel_starlib",
+#     commit = "fb47f0e9f7c376a7700fc9fe3319231ae57880df",
+#     remote = "https://github.com/cgrindel/bazel-starlib.git",
+# )
+
+bazel_binaries = use_extension(
+    "//:extensions.bzl",
+    "bazel_binaries",
+    dev_dependency = True,
+)
+bazel_binaries.download(version_file = "//:.bazelversion")
+bazel_binaries.download(version = "7.0.0-pre.20230215.2")
+use_repo(bazel_binaries, "bazel_binaries")
