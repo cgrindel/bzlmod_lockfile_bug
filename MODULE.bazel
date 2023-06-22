@@ -3,7 +3,7 @@ module(
     version = "0.0.0",
 )
 
-bazel_dep(name = "cgrindel_bazel_starlib", version = "0.15.0")
+bazel_dep(name = "cgrindel_bazel_starlib", version = "0.16.0")
 
 bazel_dep(
     name = "rules_bazel_integration_test",
